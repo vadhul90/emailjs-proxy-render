@@ -8,6 +8,12 @@ const EMAILJS_SERVICE_ID = 'service_cax0c6e';
 const EMAILJS_TEMPLATE_ID = 'template_ml6p7zu';
 const EMAILJS_PUBLIC_KEY = 'ILBZr43VWmZLzAO6k';
 
+// Add /ping endpoint for UptimeRobot
+app.get('/ping', (req, res) => {
+  console.log('Received GET request to /ping');
+  res.status(200).send('OK');
+});
+
 app.post('/send-email', async (req, res) => {
   console.log('Received POST request to /send-email');
   const { name, email, message } = req.body;
